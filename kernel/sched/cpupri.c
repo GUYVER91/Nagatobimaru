@@ -125,7 +125,7 @@ retry:
 		if (skip)
 			continue;
 
-		if (cpumask_any_and(&p->cpus_allowed, vec->mask) >= nr_cpu_ids)
+		if (cpumask_any_and(tsk_cpus_allowed(p), vec->mask) >= nr_cpu_ids)
 			continue;
 
 		if (lowest_mask) {
